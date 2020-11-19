@@ -3,25 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Katja Michalek - Resilienz Test</title>
   </head>
   <body>
-    <h1>Katja Michalek</h1>
-    <p id="question"></p>
-    <form id="skala">
-      <fieldset>
-        <input type="radio" id="immer" name="wahlmoeglichkeiten" value="1" />
-        <label for="immer">trifft immer zu</label>
-        <input type="radio" id="meistens" name="wahlmoeglichkeiten" value="2" />
-        <label for="meistens">trifft meistens zu</label>
-        <input type="radio" id="manchmal" name="wahlmoeglichkeiten" value="3" />
-        <label for="manchmal">trifft manchmal zu</label>
-        <input type="radio" id="selten" name="wahlmoeglichkeiten" value="4" />
-        <label for="selten">trifft selten zu</label>
-        <input type="radio" id="nie" name="wahlmoeglichkeiten" value="5" />
-        <label for="nie">trifft nie zu</label>
-      </fieldset>
-    </form>
+    <div id="background" class="flex--sb">
+      <img class="logo" src="img/logo.png" alt="logo of katja michalek" />
+
+      <div id="questions" class="container flow">
+        <div class="question">
+          <p class="p-large text-center" id="question"></p>
+
+          <form class="inputs p-small flex" id="skala">
+            <div class="input">
+              <input
+                type="radio"
+                id="immer"
+                name="wahlmoeglichkeiten"
+                value="1"
+              />
+              <label for="immer">trifft immer zu</label>
+            </div>
+            <div class="input">
+              <input
+                type="radio"
+                id="meistens"
+                name="wahlmoeglichkeiten"
+                value="2"
+              />
+              <label for="meistens">trifft meistens zu</label>
+            </div>
+            <div class="input">
+              <input
+                type="radio"
+                id="manchmal"
+                name="wahlmoeglichkeiten"
+                value="3"
+              />
+              <label for="manchmal">trifft manchmal zu</label>
+            </div>
+            <div class="input">
+              <input
+                type="radio"
+                id="selten"
+                name="wahlmoeglichkeiten"
+                value="4"
+              />
+              <label for="selten">trifft selten zu</label>
+            </div>
+            <div class="input">
+              <input
+                type="radio"
+                id="nie"
+                name="wahlmoeglichkeiten"
+                value="5"
+              />
+              <label for="nie">trifft nie zu</label>
+            </div>
+          </form>
+          <button class="btn" id="btn">Nächste Frage</button>
+        </div>
+      </div>
+      <img class="resi" src="img/resi.png" alt="Resi die Resilienz Spinne" />
+    </div>
+
     <div id="results"></div>
 
     <script src="app.js"></script>
