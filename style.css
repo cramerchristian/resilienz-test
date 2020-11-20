@@ -71,6 +71,7 @@ body {
   color: var(--clr--neutral__800);
   line-height: 1.5;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 h1 {
@@ -170,6 +171,7 @@ input[type='radio'] {
 
 .flex--sb {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   padding: 2rem;
   display: flex;
   flex-direction: column;
