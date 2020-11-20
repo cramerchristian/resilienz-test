@@ -1,5 +1,4 @@
 const questions = document.getElementById("questions")
-const background = document.getElementById("background")
 const questionElement = document.getElementById("question")
 const radioButtons = document.getElementsByName('wahlmoeglichkeiten')
 const skala = document.getElementById('skala')
@@ -280,7 +279,7 @@ const results = [
     },
     {
         "kategorie": "Emotionssteuerung",
-        "title": "Emotionssteuerung - Lächeln",
+        "title": "Emotions&shy;steuerung - Lächeln",
         "text": "Der zweite Faktor ist die Emotionssteuerung. Das bezeichnet die Fähigkeit, in schwierigen Situationen seine Emotionen so zu steuern, dass sie tatsächlich positiv werden. Hierbei sprechen wir jedoch nicht von Verdrängen von negativen Gefühlen, sondern einem wirklichen Herbeiführen von positiven Emotionen.",
         "text2": "Ein Lächeln kann diesem Zweck dienen. Hierzu gehört die Fähigkeit, sich dazu zu entscheiden, nicht schlecht gelaunt zu sein, also bewusst zu versuchen, positive Gefühle herzustellen.",
         "high": "Du lässt dich von schwierigen oder unangenehmen Umständen nicht so leicht die Laune verderben.",
@@ -305,7 +304,7 @@ const results = [
     },
     {
         "kategorie":  "Selbstwirksamkeit",
-        "title": "Selbstwirksamkeitsüberzeugung - Wums",
+        "title": "Selbstwirksamkeits&shy;überzeugung - Wums",
         "text": "Eine weitere wichtige Fähigkeit, die einen Einfluss auf die Resilienz im Ganzen hat, ist die Selbstwirksamkeitsüberzeugung. Damit ist die Einstellung gemeint, dass man selber etwas an seiner Situation verändern kann, und nicht das Opfer seiner Umstände ist. Menschen, die diese Fähigkeit besitzen, ist z.B. bewusst, dass sie selber mit guten Leistungen eine gute Beurteilung erlangen können, und nicht auf den Goodwill ihres Vorgesetzten angewiesen sind, und verhalten sich dementsprechend. Anders ausgedrückt: sie wissen, dass sie WUMS haben. Die innere Stärke, Dinge selber zu wuppen.",
         "high": "Du verfügst über ein gesundes Selbstbewusstsein und bist der Überzeugung, dass du die Dinge selbst beeinflussen kannst.",
         "mid": "In der Regel traust du dir einiges zu, aber hin und wieder kommen dir schon Zweifel, ob du es wirklich aus eigener Kraft schaffen kannst.",
@@ -399,9 +398,14 @@ function reverseValue(num){
     return (num - 6) * (-1)
 }
 
+
+
 // F U N K T I O N E N   um Resultate anzuzeigen
 
 function showResults(){
+    const background = document.getElementById("background")
+    const resi = document.getElementById('resi')
+    const logo = document.getElementById('logo')
     const resultsContainer = document.getElementById('results')
     questions.style.display = 'none'
     background.style.position = 'absolute'
@@ -409,8 +413,6 @@ function showResults(){
     background.style.left='0px'
     background.style.right='0px'
     background.style.bottom='0px'
-
-
 
     const einleitung = `
         <section class="flow--xl">
@@ -499,7 +501,7 @@ function showResults(){
                     Resilienz und werde glücklich und erfolgreich“ sowie das
                     Übungsbuch „Spinn dich STARK, Tag für Tag – In 9 Monaten zu einem
                     neuen Leben“, erhältlich im Buchhandel, oder mit persönlicher
-                    Widmung unter www.katjamichalek.de/veroeffentlichungen
+                    Widmung <a href="www.katjamichalek.de/veroeffentlichungen">hier bestellen</a>
                 </p>
                 <p><strong>Herzlichst, Deine Katja </strong></p>
             </div>
@@ -512,8 +514,10 @@ function showResults(){
             ${htmlArray.join('')}
         </div>
     `;
-    resultsContainer.style.marginTop = "20vh"
+    resultsContainer.style.marginTop = "25vh"
     resultsContainer.style.marginBottom = "10vh"
+    resi.classList.add('results')
+    logo.classList.add('results')
 }
 
 
