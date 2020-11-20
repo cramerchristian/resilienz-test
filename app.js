@@ -336,7 +336,9 @@ const results = [
 ]
 
 
-// F U N K T I O N E N   für Question-Section
+// --------------
+// QUESTIONS PAGE
+// --------------
 
 function displayQuestion(fragenCount){
     questionElement.textContent = fragen[fragenCount].frage
@@ -399,9 +401,12 @@ function reverseValue(num){
 }
 
 
+// ------------
+// RESULTS PAGE
+// ------------
 
-// F U N K T I O N E N   um Resultate anzuzeigen
-
+// get ALL HTML for results page - returns HTML
+// sets DOM-display propertys
 function showResults(){
     const background = document.getElementById("background")
     const resi = document.getElementById('resi')
@@ -507,20 +512,22 @@ function showResults(){
             </div>
         </section>
     `
-    const htmlArray = [einleitung, ...results.map( resultCategory => createHTML(resultCategory)), gesamt, ausleitung]
+    const questionsByCategory = showCategory()
+    const htmlArray = [einleitung, ...results.map( resultCategory => createHTML(resultCategory)), gesamt, ausleitung, questionsByCategory]
 
     resultsContainer.innerHTML = `
         <div class="container">
             ${htmlArray.join('')}
         </div>
     `;
+
     resultsContainer.style.marginTop = "25vh"
-    resultsContainer.style.marginBottom = "10vh"
+    resultsContainer.style.marginBottom = "15vh"
     resi.classList.add('results')
     logo.classList.add('results')
 }
 
-
+// get SINGLE result by category - returns HTML
 function createHTML(category){
 
     if(category.kategorie === "Gesamt"){
@@ -568,6 +575,85 @@ function createHTML(category){
     `
 }
 
+// get ALL questions by Category - returns HTML
+function showCategory(){
+    const impuls = sortCategory('Impulskontrolle')
+    const emotion = sortCategory('Emotionssteuerung')
+    const empathie = sortCategory('Empathie')
+    const ziel = sortCategory('Zielorientierung')
+    const selbst = sortCategory('Selbstwirksamkeit')
+    const optimismus = sortCategory('Optimismus')
+    const kausal = sortCategory('Kausalanalyse')
+
+    createHTMLbyCategory(impuls);
+    const html = [
+        createHTMLbyCategory(impuls),
+        createHTMLbyCategory(emotion),
+        createHTMLbyCategory(empathie),
+        createHTMLbyCategory(ziel),
+        createHTMLbyCategory(selbst),
+        createHTMLbyCategory(optimismus),
+        createHTMLbyCategory(kausal)
+    ]
+
+    return `
+        <section class="flow--xxl">
+            <h2>Deine Fragen</h2>
+            ${html.join('')}
+        </section>
+    `
+}
+
+// get SINGLE categorys questions - returns HTML
+function createHTMLbyCategory(category){
+    const html = category.userAntwort.map(item => {
+        function getAntwortinText(){
+            if(item.antwort === 1){
+                return "trifft immer zu"
+            } else if(item.antwort === 2){
+                return "trifft meistens zu"
+            } else if(item.antwort === 3){
+                return "trifft manchmal zu"
+            } else if(item.antwort === 4){
+                return "trifft selten zu"
+            } else if(item.antwort === 5){
+                return "trifft nie zu"
+            }
+        }
+
+        function getColor(){
+            if(item.wert === 1){
+                return "red"
+            } else if(item.wert === 2){
+                return "orange"
+            } else if(item.wert === 3){
+                return "yellow"
+            } else if(item.wert === 4){
+                return "lightgreen"
+            } else if(item.wert === 5){
+                return "green"
+            }
+        }
+
+        const antwortInText = getAntwortinText();
+
+        return `
+            <div>
+                <p class="border ${getColor()}">${item.frage}</p>
+                <p class="answer">${antwortInText}</p>
+            </div>
+        `
+    })
+
+    return `
+        <div class="flow">
+            <h3>${category.userAntwort[0].kategorie}</h3>
+            ${html.join('')}
+        </div>
+    `
+}
+
+// get SINGLE category - returns an OBJ with all questions and sum of questions
 function sortCategory(category){
     let questions = userAntwort.filter( frage => frage.kategorie === category)
     let sum = questions.reduce( (acc, question) => acc + parseInt(question.wert), 0)
@@ -584,36 +670,3 @@ function sortCategory(category){
 displayQuestion(counter);
 next.addEventListener('click', nextQuestion);
 window.addEventListener('keyup', nextQuestion);
-
-
-
-
-// function platzhalter(){
-//     const impuls = sortCategory('Impulskontrolle')
-//     const emotion = sortCategory('Emotionssteuerung')
-//     const empathie = sortCategory('Empathie')
-//     const ziel = sortCategory('Zielorientierung')
-//     const selbst = sortCategory('Selbstwirksamkeit')
-//     const optimismus = sortCategory('Optimismus')
-//     const kausal = sortCategory('Kausalanalyse')
-
-
-//     const htmlQuestions = categoryObj.userAntwort.map( question => {
-        
-
-
-//         return `
-//             <div>
-//                 <p>${question.frage}</p>
-//                 <p>${question.antwort}</p>
-//             </div>
-//         `
-//     })
-
-//     return `
-//         <div class="category-results">
-//             <h2>${categoryObj.userAntwort[0].kategorie}</h2>
-//             ${htmlQuestions.join('')}
-//         </div>
-//     `
-// }

@@ -106,6 +106,16 @@ a:focus {
   font-size: var(--fs__300);
 }
 
+.answer {
+  font-size: var(--fs__300);
+  color: var(--clr--neutral__700);
+}
+
+.answer::before {
+  content: '\00BB';
+  margin-right: 0.5em;
+}
+
 .punkte--accent {
   font-size: var(--fs__xl);
   color: var(--clr--accent__500);
@@ -177,6 +187,36 @@ input[type='radio'] {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.border::before {
+  content: '';
+  display: inline-block;
+  height: 0.65em;
+  width: 5px;
+  border-radius: 100vw;
+  background-color: var(--color, var(--clr--neutral__700));
+  margin-right: 0.5em;
+}
+
+.red {
+  --color: red;
+}
+
+.orange {
+  --color: orange;
+}
+
+.yellow {
+  --color: var(--clr--accent__500);
+}
+
+.lightgreen {
+  --color: rgb(160, 235, 137);
+}
+
+.green {
+  --color: green;
 }
 
 @media (min-width: 45em) {
