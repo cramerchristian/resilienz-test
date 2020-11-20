@@ -345,6 +345,7 @@ section + section {
   .section__points {
     flex-direction: column;
     justify-content: flex-end;
+    margin-top: 0;
     margin-left: 1.5rem;
   }
 
