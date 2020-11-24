@@ -3,9 +3,10 @@ const questionElement = document.getElementById("question")
 const radioButtons = document.getElementsByName('wahlmoeglichkeiten')
 const skala = document.getElementById('skala')
 const next = document.getElementById("btn")
+const datenschutz = document.querySelector(".datenschutz")
 
 // counter, der aktuelle Frage hält
-let counter = 34
+let counter = 0
 
 // hierreein werden die abgegeben antworten gepushed
 let userAntwort = [];
@@ -430,6 +431,18 @@ function showResults(){
             Dieser Test basiert auf den 7 Faktoren nach Denis Mourlane aus
             seinem Buch „Resilienz. Die Fähigkeit der wirklich Erfolgreichen“.
             </p>
+            <div class="print-container flex">
+            <button class="btn btn--print" aria-label="ausdrucken">
+              Drucken
+              <img class="print" src="img/icons/print.svg" />
+            </button>
+            <p class="p-small">
+              <b>Als PDF speichern:</b>
+              Drücke auf den Print Button. Je nach Internetbrowser kannst du
+              anschließend im Drucker-Auswahlmenü oder in einem seperaten Menü PDF
+              auswählen.
+            </p>
+          </div>
         </section>
     `
     const gesamt = `
@@ -463,6 +476,18 @@ function showResults(){
                 </p>
             </div>
         </div>
+        <div class="print-container flex">
+        <button class="btn btn--print" aria-label="ausdrucken">
+          Drucken
+          <img class="print" src="img/icons/print.svg" />
+        </button>
+        <p class="p-small">
+          <b>Als PDF speichern:</b>
+          Drücke auf den Print Button. Je nach Internetbrowser kannst du
+          anschließend im Drucker-Auswahlmenü oder in einem seperaten Menü PDF
+          auswählen.
+        </p>
+      </div>
     </section>
     `
     const ausleitung = `
@@ -509,10 +534,49 @@ function showResults(){
                     Widmung <a href="www.katjamichalek.de/veroeffentlichungen">hier bestellen</a>
                 </p>
                 <p><strong>Herzlichst, Deine Katja </strong></p>
+                <div class="socials">
+        <a
+          aria-label="E-Mail senden an Katja Michalek"
+          href="mailto:hallo@katjamichalek.com"
+          ><img src="img/icons/mail.svg" alt=""
+        /></a>
+        <a
+          aria-label="Instagram von Katja Michalek"
+          href="https://www.Instagram.com/katja.michalek"
+          target="_blank"
+          ><img src="img/icons/instagram.svg" alt=""
+        /></a>
+        <a
+          aria-label="LinkedIn Profil von Katja Michalek"
+          href="https://www.linkedin.com/in/katjamichalek"
+          target="_blank"
+          ><img src="img/icons/linkedin.svg" alt=""
+        /></a>
+        <a
+          aria-label="Podcast Resilienz * Spaß = Erfolg bei iTunes"
+          href="https://podcasts.apple.com/de/podcast/resilienz-x-spaß-erfolg-der-podcast-mit-katja-michalek/id1474404583"
+          target="_blank"
+          ><img src="img/icons/itunes.svg" alt=""
+        /></a>
+        <a
+          aria-label="Podcast Resilienz * Spaß = Erfolg bei Google Podcasts"
+          href="https://podcasts.google.com/feed/aHR0cHM6Ly9yZXNpbGllbnpzcGFzc2VyZm9sZy5saWJzeW4uY29tL3Jzcw"
+          target="_blank"
+          ><img src="img/icons/google.svg" alt=""
+        /></a>
+        <a
+          aria-label="Podcast Resilienz * Spaß = Erfolg bei Spotify"
+          href="https://open.spotify.com/show/4i2Q2zYdsEGxPQmCBmlHIH?si=ZCAJ88T8QlmNvsTTw8EBww"
+          target="_blank"
+          ><img src="img/icons/spotify.svg" alt=""
+        /></a>
+      </div>
             </div>
         </section>
     `
     const questionsByCategory = showCategory()
+    
+    // container für alle html einzelteile
     const htmlArray = [einleitung, ...results.map( resultCategory => createHTML(resultCategory)), gesamt, ausleitung, questionsByCategory]
 
     resultsContainer.innerHTML = `
@@ -521,10 +585,19 @@ function showResults(){
         </div>
     `;
 
-    resultsContainer.style.marginTop = "25vh"
+    resultsContainer.style.marginTop = "20vh"
     resultsContainer.style.marginBottom = "15vh"
     resi.classList.add('results')
     logo.classList.add('results')
+    datenschutz.classList.add('results')
+
+
+    //add print-functionality
+    const print = document.querySelectorAll(".btn--print")
+    print.forEach(item => {
+        item.addEventListener('click', () => window.print())
+    })
+
 }
 
 // get SINGLE result by category - returns HTML
@@ -600,6 +673,18 @@ function showCategory(){
         <section class="flow--xxl">
             <h2>Deine Fragen</h2>
             ${html.join('')}
+            <div class="print-container flex">
+            <button class="btn btn--print" aria-label="ausdrucken">
+              Drucken
+              <img class="print" src="img/icons/print.svg" />
+            </button>
+            <p class="p-small">
+              <b>Als PDF speichern:</b>
+              Drücke auf den Print Button. Je nach Internetbrowser kannst du
+              anschließend im Drucker-Auswahlmenü oder in einem seperaten Menü PDF
+              auswählen.
+            </p>
+          </div>
         </section>
     `
 }
