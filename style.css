@@ -130,8 +130,8 @@ a:focus {
 /* form elements */
 
 input[type='radio'] {
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .input {
