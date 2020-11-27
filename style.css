@@ -60,6 +60,7 @@ label {
 }
 
 button {
+  font: inherit;
   all: inherit;
 }
 
@@ -493,6 +494,8 @@ section + section {
 }
 
 .btn--print {
+  display: flex;
+  align-items: center;
   flex-direction: row;
   margin: 0 !important;
 }
