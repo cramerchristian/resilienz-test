@@ -6,7 +6,7 @@ const next = document.getElementById("btn")
 const datenschutz = document.querySelector(".datenschutz")
 
 // counter, der aktuelle Frage hält
-let counter = 0
+let counter = 35
 
 // hierreein werden die abgegeben antworten gepushed
 let userAntwort = [];
@@ -348,11 +348,16 @@ function displayQuestion(fragenCount){
 function saveAnswer(fragenCount){
     let userSelection = parseInt(getRadioInput())
 
-    userAntwort = [...userAntwort, {
-        ...fragen[fragenCount],
+    const frage = fragen[fragenCount]
+    const userFrage = {
         antwort: userSelection,
-        wert: fragen[fragenCount].isSkalaReverse === 'true' ? reverseValue(userSelection) : userSelection
-    }]
+        wert: fragen[fragenCount].isSkalaReverse === 'true' ? reverseValue(userSelection) : userSelection}
+
+    for (const key of Object.keys(frage)){
+        userFrage[key] = frage[key];
+    }
+
+    userAntwort.push(userFrage)
 }
 
 function getRadioInput(){
