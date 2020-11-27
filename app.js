@@ -362,12 +362,12 @@ function saveAnswer(fragenCount){
 
 function getRadioInput(){
     let value = 0;
-    radioButtons.forEach(radio => {
-        if(radio.checked){
-            value = radio.value
-            radio.checked = false;
+    for (let button of radioButtons){
+        if(button.checked){
+            value = button.value
+            button.checked = false;
         }
-    })
+    }
     return value
 }
 
