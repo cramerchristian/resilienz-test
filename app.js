@@ -373,11 +373,11 @@ function getRadioInput(){
 
 function isOneChecked(){
     let value = false;
-    radioButtons.forEach(radio => {
-        if(radio.checked){
+    for (let button of radioButtons){
+        if(button.checked){
             value = true
         }
-    })
+    }
     return value
 }
 
