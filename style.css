@@ -60,6 +60,7 @@ label {
 }
 
 button {
+  display: block;
   font: inherit;
   all: inherit;
 }
