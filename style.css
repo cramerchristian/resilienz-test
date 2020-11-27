@@ -311,8 +311,8 @@ input[type='radio'] {
 
 @media (min-width: 45em) {
   .datenschutz {
-    bottom: inital;
-    left: initial;
+    bottom: auto;
+    left: auto;
     top: 5px;
     right: 10px;
     transform: rotate(0deg);
