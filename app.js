@@ -6,7 +6,7 @@ const next = document.getElementById("btn")
 const datenschutz = document.querySelector(".datenschutz")
 
 // counter, der aktuelle Frage hält
-let counter = 35
+let counter = 0
 
 // hierreein werden die abgegeben antworten gepushed
 let userAntwort = [];
