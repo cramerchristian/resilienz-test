@@ -4,6 +4,9 @@ const radioButtons = document.getElementsByName('wahlmoeglichkeiten')
 const skala = document.getElementById('skala')
 const next = document.getElementById("btn")
 const datenschutz = document.querySelector(".datenschutz")
+const progress = document.getElementById("progress")
+const progress__inner = document.getElementById("progress__inner")
+const startBtn = document.getElementById("start-btn")
 
 // counter, der aktuelle Frage hält
 let counter = 0
@@ -338,11 +341,40 @@ const results = [
 
 
 // --------------
+// START PAGE
+// --------------
+
+const startQuestionsCount = document.getElementById("countquestions")
+startQuestionsCount.textContent = fragen.length;
+
+function startTest(){
+    const startPage = document.getElementById('start');
+    
+    startPage.style.display = "none"
+    questions.style.display = "block"
+    displayQuestion(counter);
+
+    next.addEventListener('click', nextQuestion);
+    window.addEventListener('keyup', nextQuestion);
+    startBtn.removeEventListener('click', startTest);
+}
+
+// --------------
 // QUESTIONS PAGE
 // --------------
 
 function displayQuestion(fragenCount){
     questionElement.textContent = fragen[fragenCount].frage
+    setProgressBar(fragenCount)
+}
+
+function setProgressBar(count){
+    const countQuestions = fragen.length;
+    const calcWidth = count /  countQuestions * 100;
+    progress__inner.style.width = `${calcWidth}%`
+    progress.dataset.content = countQuestions;
+    progress__inner.dataset.content = count+1 === fragen.length ? '' : count + 1;
+
 }
 
 function saveAnswer(fragenCount){
@@ -757,6 +789,4 @@ function sortCategory(category){
 
 // Initial Set Up
 
-displayQuestion(counter);
-next.addEventListener('click', nextQuestion);
-window.addEventListener('keyup', nextQuestion);
+startBtn.addEventListener('click', startTest);

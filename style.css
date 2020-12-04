@@ -2,8 +2,10 @@
   --clr--primary__700: #936441;
   --clr--primary__500: #88644d;
   --clr--primary__100: #a9917f;
+  --clr--accent__700: #fad900;
   --clr--accent__500: #ffe950;
   --clr--accent__300: #ffec70;
+  --clr--accent__100: #fff7c6;
   --clr--neutral__100: #ffffff;
   --clr--neutral__300: #f8f7fc;
   --clr--neutral__700: #858585;
@@ -195,7 +197,8 @@ input[type='radio'] {
   margin-top: 3rem;
   padding: 3rem 0;
   border-radius: 1rem;
-  background: var(--clr--accent__300);
+  border: 5px solid var(--clr--accent__300);
+  background: var(--clr--accent__100);
 }
 
 .socials > * {
@@ -328,6 +331,7 @@ input[type='radio'] {
 }
 
 .btn {
+  width: max-content;
   font-size: 0.875rem;
   font-weight: var(--fw__700);
   color: var(--clr--primary__700);
@@ -390,6 +394,52 @@ input[type='radio'] {
     top: 2rem;
     left: 2.25rem;
   }
+}
+
+#questions {
+  width: 100%;
+}
+
+.progress {
+  max-width: 620px;
+  margin: 0 auto;
+  height: 0.75rem;
+  border-radius: 0.5em;
+  background: var(--clr--neutral__300);
+  box-shadow: inset 0px 3px 0.3rem rgba(0, 0, 0, 0.05);
+  margin-bottom: 2.5rem;
+  padding: 4px;
+  position: relative;
+}
+
+.progress__inner {
+  width: 70%;
+  height: 100%;
+  border-radius: 0.5em;
+  background: var(--clr--accent__700);
+  position: relative;
+}
+
+.progress__inner::after {
+  position: absolute;
+  right: 0;
+  top: -1.375rem;
+  color: var(--clr--neutral__700);
+  display: block;
+  content: attr(data-content);
+  font-size: 0.75rem;
+  border-radius: 100vw;
+}
+
+.progress::after {
+  position: absolute;
+  right: 0;
+  top: -1.125rem;
+  color: var(--clr--neutral__700);
+  display: block;
+  content: attr(data-content);
+  font-size: 0.75rem;
+  border-radius: 100vw;
 }
 
 /* layout */
@@ -509,4 +559,8 @@ section + section {
   .datenschutz {
     display: none;
   }
+}
+
+#questions {
+  display: none;
 }
