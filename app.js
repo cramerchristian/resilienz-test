@@ -9,7 +9,7 @@ const progress__inner = document.getElementById("progress__inner")
 const startBtn = document.getElementById("start-btn")
 
 // counter, der aktuelle Frage hält
-let counter = 0
+let counter = 35
 
 // hierreein werden die abgegeben antworten gepushed
 let userAntwort = [];
@@ -275,8 +275,7 @@ const results = [
     {
         "kategorie": "Impulskontrolle",
         "title": "Impulskontrolle - Fokus",
-        "text": "Den ersten Faktor nennt man Impulskontrolle. Unter Impulskontrolle versteht man in diesem Zusammenhang zwei Dinge. Zum einen ist dies die klassische Disziplin, d.h. Dinge zu beenden die man begonnen hat, oder sich an Absprachen zu halten - FOKUS",
-        "text2": "Zum anderen bezeichnet Impulskontrolle jedoch auch die Fähigkeit, nicht auf den ersten Impuls zu reagieren, z.B. nicht direkt zurück zu „pampen“, wenn man angeblafft wird.",
+        "text": "Den ersten Faktor nennt man Impulskontrolle. Unter Impulskontrolle versteht man in diesem Zusammenhang zwei Dinge. Zum einen ist dies die klassische Disziplin, d.h. Dinge zu beenden die man begonnen hat, oder sich an Absprachen zu halten - FOKUS. <br><br>Zum anderen bezeichnet Impulskontrolle jedoch auch die Fähigkeit, nicht auf den ersten Impuls zu reagieren, z.B. nicht direkt zurück zu „pampen“, wenn man angeblafft wird.",
         "high": "Du hast eine gute Konzentrationsfähigkeit und beendest das, was du begonnen hast, ohne dich groß ablenken zu lassen.",
         "mid": "Wenn dich eine Sache interessiert, kannst du dich gut darin vertiefen, allerdings lässt du dich schnell ablenken, wenn etwas vermeintlich Spannenderes anfällt.",
         "low": "Du bleibst selten an einer Sache dran, sondern gibst jeder Ablenkung und jedem Impuls sofort nach.",
@@ -284,8 +283,7 @@ const results = [
     {
         "kategorie": "Emotionssteuerung",
         "title": "Emotions&shy;steuerung - Lächeln",
-        "text": "Der zweite Faktor ist die Emotionssteuerung. Das bezeichnet die Fähigkeit, in schwierigen Situationen seine Emotionen so zu steuern, dass sie tatsächlich positiv werden. Hierbei sprechen wir jedoch nicht von Verdrängen von negativen Gefühlen, sondern einem wirklichen Herbeiführen von positiven Emotionen.",
-        "text2": "Ein Lächeln kann diesem Zweck dienen. Hierzu gehört die Fähigkeit, sich dazu zu entscheiden, nicht schlecht gelaunt zu sein, also bewusst zu versuchen, positive Gefühle herzustellen.",
+        "text": "Der zweite Faktor ist die Emotionssteuerung. Das bezeichnet die Fähigkeit, in schwierigen Situationen seine Emotionen so zu steuern, dass sie tatsächlich positiv werden. Hierbei sprechen wir jedoch nicht von Verdrängen von negativen Gefühlen, sondern einem wirklichen Herbeiführen von positiven Emotionen. <br><br>Ein Lächeln kann diesem Zweck dienen. Hierzu gehört die Fähigkeit, sich dazu zu entscheiden, nicht schlecht gelaunt zu sein, also bewusst zu versuchen, positive Gefühle herzustellen.",
         "high": "Du lässt dich von schwierigen oder unangenehmen Umständen nicht so leicht die Laune verderben.",
         "mid": "Du bist oft gut gelaunt, und schaffst es auch nach schwierigen Situationen vergleichsweise schnell, deine Emotionen zum Positiven zu wenden.",
         "low": "Du bist den Launen des Lebens hilflos ausgeliefert und schaffst es nur selten, dich selbst aus einer negativen Emotion zu befreien."
@@ -293,7 +291,7 @@ const results = [
     {
         "kategorie": "Empathie",
         "title": "Empathie - Herz",
-        "text": "Die Fähigkeit zur Emotionssteuerung wird oft unterstützt von der Fähigkeit zur Empathie. Empathie bezeichnet man die Fähigkeit, sich in andere Personen hineinzuversetzen, und ihre Gefühle und Beweggründe zu verstehen. HERZ zu zeigen. Empathische Fähigkeiten helfen dir z.B., auch mit schwierigen Zeitgenossen umzugehen.",
+        "text": "Die Fähigkeit zur Emotionssteuerung wird oft unterstützt von der Fähigkeit zur Empathie. Empathie bezeichnet man die Fähigkeit, sich in andere Personen hineinzuversetzen, und ihre Gefühle und Beweggründe zu verstehen. HERZ zu zeigen. Empathische Fähigkeiten helfen dir z.B., auch mit schwierigen Zeitgenossen umzugehen. Und sie sind die Voraussetzung dafür, dass du ein stabiles soziales Netz aufbaust, das dir auch in schwierigen Situationen beisteht.<br><br> Gleichzeitig ist die Empathie mit dir selbst auch wichtig. Kannst du dir schon mal verzeihe wenn du einen Fehler gemacht hast? Oder beschimpfst du dich dann in einem Fort?",
         "high": "Du kannst dich gut in andere Leute hineinversetzen, was dir ermöglicht, tiefe und dauerhafte Beziehungen zu anderen zu führen.",
         "mid": "In den meisten Fällen kannst du dich einfühlen in das, was in deinem Gegenüber vorgeht. Es gibt jedoch immer wieder Situationen, in denen du völlig überrascht von den Reaktionen anderer Menschen sind.",
         "low": "Andere Menschen sind dir ein Rätsel, du hast keinen Schimmer, was in ihnen vorgeht."
@@ -317,7 +315,7 @@ const results = [
     {
         "kategorie": "Optimismus",
         "title": "Optimismus - Sonne",
-        "text": "Ein weiterer wichtiger Faktor ist Optimismus, also eine positive Sicht auf die Dinge. Menschen, die diese Fähigkeit besitzen, fühlen sich normalerweise, als ob sie an der SONNE wären. Auch widrige Umstände oder schlimme Ereignisse lassen sie nicht lange verzagen, da der feste Glaube daradass es schon wieder gut wird, sie aufrechterhält. Ein pessimistischer Mensch würde daran eher zweifeund glauben, dass alle Chancen vertan sind.",
+        "text": "Ein weiterer wichtiger Faktor ist Optimismus, also eine positive Sicht auf die Dinge. Menschen, die diese Fähigkeit besitzen, fühlen sich normalerweise, als ob sie an der SONNE wären. Auch widrige Umstände oder schlimme Ereignisse lassen sie nicht lange verzagen, da der feste Glaube daran, dass es schon wieder gut wird, sie aufrechterhält. Ein pessimistischer Mensch würde daran eher zweifeund glauben, dass alle Chancen vertan sind.",
         "high": "Dein Glas ist in den allermeisten Fällen halb voll, und du lässt dich auch von widrigen Umständen nicht von deiner positiven Sicht auf die Dinge abbringen.",
         "mid": "In der Regel glaubst du daran, dass die Dinge sich im Großen und Ganzen schon zum Guten wenden werden, allerdings kommen dir immer häufiger Zweifel, ob dem wirklich so ist.",
         "low": "Egal was passiert – du bist der Überzeugung, dass es schlecht ausgehen wird. Dass du immer in der längsten Schlange warten wirst. Dass alles schiefgehen wird, was nur schiefgehkann."
@@ -335,7 +333,7 @@ const results = [
         "title": "Deine Gesamtwertung",
         "high": "Du bist ein äußert resilienter Mensch – Hut ab! Achte bitte auf dich, damit Dir diese Resilienz erhalten bleibt, denn zu viel Stress oder eine dauerhafte Unter- oder Überforderung im Job kann an dieser Resilienz zehren. ",
         "mid": "Du bist im Großen und Ganzen und in den meisten Situationen resilient. Zu viel Druck oder ein Zusammentreffen von unglücklichen Umständen können dich jedoch leicht aus der Bahn werfen. Es wäre sinnvoll, an den weniger resilienten Punkten zu arbeiten, um diese „Fäden“ zu stärken und gleichzeitig die starken Faktoren weiter zu unterstützen. ",
-        "low": "Du solltest unbedingt etwas tun – deine Resilienz hat schon ganz schön gelitten! Liegt es an deinem Job? An den Lebensumständen? Oder kennst du es gar nicht anders? Schaue hin, was die Ursache ist, und arbeite einerseits an deiner Resilienz.",
+        "low": "Du solltest unbedingt etwas tun – deine Resilienz hat schon ganz schön gelitten! Liegt es an deinem Job? An den Lebensumständen? Oder kennst du es gar nicht anders? Schaue hin, was die Ursache ist, und arbeite einerseits an deiner Resilienz.<br>Überlege andererseits, auf welche äußeren Umstände du Einfluss nehmen kannst – z.B. in dem Du dich beruflich neu orientierst, wenn du in deinem Job nicht mehr glücklich bist.",
     }
 ]
 
@@ -461,12 +459,12 @@ function showResults(){
         <section class="flow--xl">
             <h1>Resilienz</h1>
             <p class="p-large">
-            Resilienz besteht aus verschiedenen Faktoren, die gemeinsam unsere
-            Fähigkeit ausmachen, im Chaos einen kühlen Kopf zu bewahren.
-            Manchmal wird sie auch als das „Immunsystem der Seele“ bezeichnet.
-            In der Literatur wird mal von 7, mal von 8 Faktoren gesprochen.
-            Dieser Test basiert auf den 7 Faktoren nach Denis Mourlane aus
-            seinem Buch „Resilienz. Die Fähigkeit der wirklich Erfolgreichen“.
+            Resilienz besteht aus verschiedenen Faktoren, die gemeinsam unsere Fähigkeit ausmachen, im 
+Chaos einen kühlen Kopf zu bewahren, Veränderungen (mit) zu gestalten, und aus Krisen gestärkt 
+hervor zu gehen. Manchmal wird sie auch als das „Immunsystem der Seele“ bezeichnet. 
+Wenn du mehr darüber erfahren möchtest, empfehle ich dir mein Buch „Nichts ist zu schwer für 
+den, der spinnt. Stärke deine Resilienz und werde erfolgreich und glücklich“ (im Buchhandel erhältlich, 
+oder mit persönlicher Widmung <a href="https://www.katjamichalek.de/veroeffentlichungen">auf meiner Homepage zu erwerben</a>).
             </p>
             <div class="print-container flex">
             <button class="btn btn--print" aria-label="ausdrucken">
@@ -531,11 +529,6 @@ function showResults(){
         <section class="flow--xxl">
             <div class="section__intro flow">
                 <h2>Letzte Worte</h2>
-                <p>
-                    Überlege andererseits, auf welche äußeren Umstände du Einfluss
-                    nehmen kannst – z.B. in dem Du dich beruflich neu orientierst,
-                    wenn du in deinem Job nicht mehr glücklich bist.
-                </p>
                 <p>
                     Resilienz ist nie statisch. Stelle dir Resilienz vielmehr als eine
                     Art Spinnennetz vor. Gewoben haben dieses Netz unsere Eltern,
