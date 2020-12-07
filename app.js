@@ -9,7 +9,7 @@ const progress__inner = document.getElementById("progress__inner")
 const startBtn = document.getElementById("start-btn")
 
 // counter, der aktuelle Frage hält
-let counter = 35
+let counter = 0
 
 // hierreein werden die abgegeben antworten gepushed
 let userAntwort = [];
